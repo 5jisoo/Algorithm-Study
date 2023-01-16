@@ -1,2 +1,2 @@
-# -Algorithm-Study
-[2023 winter -] algorithm study
+# Algorithm Study
+신진영 개인 브랜치 😙
