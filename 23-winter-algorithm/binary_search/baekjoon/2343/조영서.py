@@ -2,25 +2,20 @@ import sys
 input = sys.stdin.readline
 
 n,m = map(int, input().split())
-lec = list(map(int, input().split()))
+online = [int(input()) for _ in range(n)]
 
-left = max(lec)
-right = sum(lec)
+left, right =1, max(online)
 
 while (left <= right):
-    blue = (left+right) // 2
-    total = 0
-    count = 1
-    for i in range(n):
-        if (total+lec[i] > blue):
-            count += 1
-            total = 0
-        total += lec[i]
+    size = (left+right) // 2
+    count = 0
+    for i in online:
+        count += i // size
         if (count > m):
             break
-    if (count > m):
-        left += 1
+    if (count >= m):
+        left = size + 1
     else:
-        right -= 1
+        right = size - 1
 
-print(left)
+print(right)
