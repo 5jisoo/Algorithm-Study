@@ -1,15 +1,15 @@
-import math
+import sys
 
-t = int(input())
-answer = []
-for _ in range(t):
-    n,m = map(int, input().split())
-    count = math.factorial(m) // (math.factorial(n)*math.factorial(m-n))
-    answer.append(count)
+n = int(sys.stdin.readline())
+count = 0
 
-for i in range(len(answer)):
-    print(answer[i])
+while (n >= 0):
+    if n % 5 == 0:
+        count += (n//5)
+        break
+    n -= 3
+    count += 1
+else:
+    count = -1
 
-
-
-
+print(count)
